@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
+    "target": "ES6", // 추가
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "noImplicitAny": false, // 추가
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false, // 변경
+    "forceConsistentCasingInFileNames": false, // 추가
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -12,15 +15,22 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".", // 추가
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "*": ["./*"] // 변경
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    // 추가
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
