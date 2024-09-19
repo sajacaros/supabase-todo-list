@@ -6,6 +6,7 @@ import ReactQueryClientProvider from "../config/ReactQueryClientProvider";
 import MainLayout from "components/layouts/main-layout";
 import Auth from "components/auth";
 import { createServerSupabaseClient } from "utils/supabase/server";
+import AuthProvider from "config/auth-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,9 +38,11 @@ export default async function RootLayout({
       </head>
       <ReactQueryClientProvider>
         <ThemeProvider>
-          <body>
-            {session?.user ? <MainLayout>{children}</MainLayout> : <Auth />}
-          </body>
+          <AuthProvider accessToken={session?.access_token}>
+            <body>
+              {session?.user ? <MainLayout>{children}</MainLayout> : <Auth />}
+            </body>
+          </AuthProvider>
         </ThemeProvider>
       </ReactQueryClientProvider>
     </html>

@@ -23,8 +23,7 @@ export default function UI() {
     },
   });
   return (
-    <div className="w-2/3 mx-auto flex flex-col items-center py-10 gap-2">
-      <h1 className="text-xl">TODO List</h1>
+    <div className="w-2/3 mx-auto flex flex-col items-center gap-2">
       <Input
         label="Search TODO"
         icon={<i className="fas fa-search" />}
