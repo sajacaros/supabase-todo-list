@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import withMT from "@material-tailwind/react/utils/withMT";
 
 const config: Config = {
   content: [
@@ -8,6 +9,6 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {}, // 내용 제거
-  plugins: [require("@tailwindcss/typography")], // 추가
+  plugins: [require("@tailwindcss/typography"), require("autoprefixer")], // 추가
 };
-export default config;
+export default withMT(config);

@@ -1,5 +1,10 @@
-import Image from "next/image";
+import UI from "./ui";
+import { createServerSupabaseClient } from "utils/supabase/server";
 
-export default function Home() {
-  return <main>TODO List</main>;
+export default async function Home() {
+  return (
+    <main>
+      <UI></UI>
+    </main>
+  );
 }

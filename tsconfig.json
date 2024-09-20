@@ -30,7 +30,7 @@
   "ts-node": {
     // 추가
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "commonjs"
     }
   }
 }
