@@ -41,6 +41,9 @@ export default function SignIn({ setView }) {
           label="password"
           type="password"
           className="w-full rounded-sm"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") signInMutation.mutate();
+          }}
         />
         <Button
           onClick={() => {
