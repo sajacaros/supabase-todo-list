@@ -22,3 +22,12 @@
   npm run generate-types
   ```
 - `types_db.ts` 파일 확인
+- RLS 설정
+  - INSERT 설정
+    - ![](./public/images/rls_insert.png)
+  - SELECT 설정
+    - ![](./public/images/rls_select.png)
+  - UPDATE 설정
+    - ![](./public/images/rls_update.png)
+  - DELETE 설정
+    - ![](./public/images/rls_delete.png)
